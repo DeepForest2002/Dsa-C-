@@ -20,6 +20,10 @@ int find_element(vector<int> arr, int target, int n, int i)
     return find_element(arr, target, n, i += 1);
 }
 
+int find_sum(vector<int>arr, int n, int i, int sum){
+    
+}
+
 int main()
 {
     vector<int> arr = {1, 4, 3, 0};
