@@ -102,8 +102,7 @@ public:
 
 int main()
 {
-    Node object;
-    object.push(10);
+   
 
     return 0;
 }
