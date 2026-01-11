@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include<stack>
 using namespace std;
 
 class Min_stack
@@ -18,7 +19,8 @@ public:
         if (st.empty())
             st.push({data, data});
         else
-            int min_element = find_min(data, st.top().second());
+            int min_element = find_min(data,st.top().second);
+            st.push({data, min_element});
     }
 };
 
