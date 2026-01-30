@@ -17,7 +17,8 @@ int find_celibrity(vector<vector<int>> arr)
             if (arr[i][j] == 1)
             {
                 know_me[j]++;
-                iKnow[i]++;
+                
+                
             }
         }
     }
