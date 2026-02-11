@@ -11,9 +11,9 @@ int find_len(string str)
     {
         if (mpp.find(str[r]) != mpp.end())
         {
-            if (mpp[str[r]] >= l)
+            if (mpp[str[r]] >= l)                               
             {
-                l = mpp[str[r]] + 1;
+                l = mpp[str[r]] + 1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
             }
         }
         maxlen = max(maxlen, (r - l + 1));
