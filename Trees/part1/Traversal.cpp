@@ -28,8 +28,8 @@ vector<int> preOrder(Node *root)
     vector<int> arr;
     preOrderTraversal(arr, root);
     return arr;
+    queue<int> q;
 }
-
 int main()
 {
     Node *root = new Node(5);
