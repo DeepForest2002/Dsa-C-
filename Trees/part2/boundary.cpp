@@ -77,6 +77,7 @@ vector<int> Boundary_Traversal(TreeNode *root)
     add_left(root, result);
     preorder(root, result);
     add_right(root, result);
+    return result;
 }
 
 int main()
