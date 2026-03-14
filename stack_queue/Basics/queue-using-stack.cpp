@@ -42,6 +42,7 @@ public:
             {
                 output.push(input.top());
                 input.top();
+                
             }
         }
         return output.top();
