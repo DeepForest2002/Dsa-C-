@@ -44,9 +44,5 @@ int main()
     vector<vector<int>> arr = {{10, 20, 15}, {21, 30, 14}, {7, 16, 32}};
     vector<int> arr = find_peak(arr);
     cout << "Hello World";
-    for (auto el : arr)
-    {
-        cout << el << " ";
-    }
     return 0;
 }
