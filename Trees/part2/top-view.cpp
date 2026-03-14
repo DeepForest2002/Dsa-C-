@@ -23,7 +23,7 @@ vector<int> topView(TreeNode *root)
     while (!q.empty())
     {
         // take the first element out
-        auto p = q.front();
+        auto p = q.front(); 
         q.pop();
         int l = p.second;
         TreeNode *node = p.first;
