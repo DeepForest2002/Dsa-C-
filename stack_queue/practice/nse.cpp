@@ -30,6 +30,6 @@ int main()
         cout << el << "";
     }
     int arr1[] = {4, 8, 5, 2, 25};
-    int maxi = *max_element(arr1.begin(), arr1.end());
+    // int maxi = *max_element(arr1.begin(), arr1.end());
     return 0;
 }
