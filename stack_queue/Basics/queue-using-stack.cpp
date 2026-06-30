@@ -41,7 +41,7 @@ public:
             while (!input.empty())
             {
                 output.push(input.top());
-                input.top();
+                input.pop();
                 
             }
         }
