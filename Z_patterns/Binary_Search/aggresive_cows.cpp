@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <algorithm>
 using namespace std;
 
 bool isPossible(vector<int> arr, int k, int mid)
@@ -21,6 +22,7 @@ int aggresive_cows(vector<int> &arr, int k)
     sort(arr.begin(), arr.end());
     int low = 1, high = arr[arr.size() - 1] - arr[0];
     int res = -1;
+    int sum = accumulate(arr.begin(), arr.end(), 0);
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
