@@ -26,12 +26,14 @@ int findMaximizedCapital(int k, int &w, vector<int> &profits, vector<int> &capit
     sort(profits.begin(), profits.end());
     sort(capital.begin(), capital.end());
     int profit = w;
-    while (k)
+    int index = 0;
+    while (k && index < profits.size())
     {
         int max_cap_index = find_max_index(capital, profit);
         if (max_cap_index == -1)
             break;
         profit = profit + profits[max_cap_index];
+        index = max_cap_index;
         k -= 1;
     }
     return profit;
@@ -40,8 +42,8 @@ int findMaximizedCapital(int k, int &w, vector<int> &profits, vector<int> &capit
 int main()
 {
     vector<int> profit = {1, 2, 3};
-    vector<int> capital = {0, 1, 1};
-    int k = 2;
+    vector<int> capital = {0, 1, 2};
+    int k = 10;
     int w = 0;
     cout << findMaximizedCapital(k, w, profit, capital);
     return 0;
