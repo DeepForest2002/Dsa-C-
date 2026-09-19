@@ -15,7 +15,7 @@ public:
     }
 };
 
-vector<vector<int>> LevelOrder(Node *node)
+/*vector<vector<int>> LevelOrder(Node *node)
 {
     vector<vector<int>> ans;
     if (node == nullptr)
@@ -35,6 +35,30 @@ vector<vector<int>> LevelOrder(Node *node)
                 q.push(top->left);
             if (top->right)
                 q.push(top->right);
+        }
+        ans.push_back(temp);
+    }
+    return ans;
+}*/
+
+vector<vector<int>> LevelOrder(Node *node)
+{
+    queue<Node *> q;
+    vector<vector<int>> ans;
+    q.push(node);
+    while (!q.empty())
+    {
+        int size = q.size();
+        vector<int> temp(size);
+        for (int i = 0; i < size; i++)
+        {
+            Node *n = q.front();
+            q.pop();
+            temp.push_back(n->data);
+            if (n->left)
+                q.push(n->left);
+            if (n->right)
+                q.push(n->right);
         }
         ans.push_back(temp);
     }
