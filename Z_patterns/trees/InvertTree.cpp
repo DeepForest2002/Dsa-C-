@@ -35,7 +35,10 @@ void count_nodes(Node *root, int *count)
 int main()
 {
     Node *root = new Node(1);
-    root->left = 2;
-    root->right = 3;
-    count return 0;
+    root->left = new Node(2);
+    root->right = new Node(3);
+    int count = 0;
+    count_nodes(root, &count);
+    cout << count;
+    return 0;
 }
