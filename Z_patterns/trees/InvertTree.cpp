@@ -7,11 +7,10 @@ public:
     int data;
     Node *left;
     Node *right;
-    Node(int data, Node *left, Node *right)
+    Node(int data)
     {
         this->data = data;
-        this->left = left;
-        this->right = right;
+        this->left = this->right = nullptr;
     }
 };
 
@@ -24,8 +23,19 @@ void InvertTree(Node *root)
     InvertTree(root->right);
 }
 
+void count_nodes(Node *root, int *count)
+{
+    if (!root)
+        return;
+    count_nodes(root->left, count);
+    count++;
+    count_nodes(root->right, count);
+}
+
 int main()
 {
-
-    return 0;
+    Node *root = new Node(1);
+    root->left = 2;
+    root->right = 3;
+    count return 0;
 }
