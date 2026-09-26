@@ -16,12 +16,12 @@ int orangesRotting(vector<vector<int>> &grid)
     int time = 0;
     int fresh = 0;
     queue<pair<int, int>> q;
-    int row = grid.size();
-    int col = grid[0].size();
+    int n = grid.size();
+    int m = grid[0].size();
 
-    for (int i = 0; i < row; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < col; j++)
+        for (int j = 0; j < m; j++)
         {
             if (grid[i][j] == 2)
             {
@@ -32,8 +32,40 @@ int orangesRotting(vector<vector<int>> &grid)
                 fresh += 1;
         }
     }
+
+    while (!q.empty() && fresh)
+    {
+        int size = q.size();
+        time += 1;
+        while (size--)
+        {
+            pair<int, int> p = q.front();
+            q.pop();
+            int r = p.first;
+            int c = p.second;
+            // 4 directions
+            for (int k = 0; k < 4; k++)
+            {
+                int row = r + x[k];
+                int col = c + y[k];
+                if (validDirection(n, m, row, col) && grid[row][col] == 1)
+                {
+                    fresh -= 1;
+                    q.push({row, col});
+                    grid[row][col] = 0;
+                }
+            }
+        }
+    }
+    if (fresh)
+        return -1;
+    return time;
 }
 int main()
 {
+    vector<vector<int>> grid = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
+    int ans = orangesRotting(grid);
+    cout << ans;
+
     return 0;
 }
