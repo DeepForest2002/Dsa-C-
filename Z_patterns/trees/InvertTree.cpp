@@ -23,13 +23,13 @@ void InvertTree(Node *root)
     InvertTree(root->right);
 }
 
-void count_nodes(Node *root, int *count)
+int count_nodes(Node *root)
 {
     if (!root)
-        return;
-    count_nodes(root->left, count);
-    count++;
-    count_nodes(root->right, count);
+        return 0;
+    int left = count_nodes(root->left);
+    int right = count_nodes(root->right);
+    return 1 + left + right;
 }
 
 int main()
@@ -37,8 +37,7 @@ int main()
     Node *root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);
-    int count = 0;
-    count_nodes(root, &count);
-    cout << count;
+
+    cout << count_nodes(root);
     return 0;
 }
