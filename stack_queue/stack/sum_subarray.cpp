@@ -58,7 +58,7 @@ int find_ans(vector<int> arr, vector<int> psl, vector<int> nsl)
 
 int main()
 {
-    vector<int> arr = {71, 55, 82, 55};
+    vector<int> arr = {3, 1, 2, 4};
     vector<int> psl = find_psl(arr);
     vector<int> nsl = find_nsl(arr);
 

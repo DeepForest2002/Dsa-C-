@@ -30,7 +30,7 @@ vector<vector<int>> LevelOrderZigZag(TreeNode *root)
         {
             TreeNode *top = q.front();
             q.pop();
-            int idx = Left_to_Right ? i : size - 1 - i;
+            int idx = Left_to_Right ? i : size - 1 - i; //most important line
             temp[idx] = top->data;
             if (top->left)
                 q.push(top->left);
