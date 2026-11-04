@@ -38,11 +38,11 @@ void bfsTraversal(vector<vector<int>> &AdjList, vector<int> &res, vector<int> &v
         res.push_back(el);
         for (int i = 0; i < AdjList[el].size(); i++)
         {
-            int neighbours = AdjList[el][i];
-            if (visited[neighbours] == false)
+            int neighbour = AdjList[el][i];
+            if (visited[neighbour] == false)
             {
-                q.push(neighbours);
-                visited[neighbours] = true;
+                q.push(neighbour);
+                visited[neighbour] = true;
             }
         }
     }
