@@ -19,7 +19,7 @@ int longestKsubstr(string str, int k)
         }
         // while the condition is right calculate the length
         if (mpp.size() == k)
-            maxLen = (maxLen, (r - l + 1));
+            maxLen = max(maxLen, (r - l + 1));
         r += 1;
     }
     return maxLen == INT_MIN ? -1 : maxLen;
