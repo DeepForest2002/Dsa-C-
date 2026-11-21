@@ -26,6 +26,7 @@ int findMaximizedCapital(int k, int &w, vector<int> &profits, vector<int> &capit
     sort(profits.begin(), profits.end());
     sort(capital.begin(), capital.end());
     int profit = w;
+    cout << "Hello World" << endl;
     int index = 0;
     while (k && index < profits.size())
     {
