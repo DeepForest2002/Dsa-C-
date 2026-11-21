@@ -2,6 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// this is a problem of recognizing string
+
 struct cmp
 {
     /* data */
