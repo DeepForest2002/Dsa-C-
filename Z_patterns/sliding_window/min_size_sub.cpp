@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int find_len(vector<int> arr, int target)
+/*int find_len(vector<int> arr, int target)
 {
     int sum = 0, l = 0, r = 0;
     int minLen = INT_MAX;
@@ -18,6 +18,23 @@ int find_len(vector<int> arr, int target)
         r += 1;
     }
     return minLen;
+}*/
+
+int find_len(vector<int> &arr, int target)
+{
+    int l = 0, r = 0, n = arr.size(), minLen = INT_MAX;
+    int sum = 0;
+    while (r < n)
+    {
+        sum = sum + arr[r];
+        while (sum >= target)
+        {
+            minLen = min(minLen, (r - l + 1));
+            sum -= arr[l++];
+        }
+        r += 1;
+    }
+    return minLen == INT16_MAX ? 0 : minLen;
 }
 
 int main()
